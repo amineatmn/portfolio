@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAÉ — Kart Électrique · Amine Atamna</title>
+  <meta name="description" content="Contrôleur bas niveau d'un kart électrique : firmware ATmega328P, génération PWM 10 kHz, conditionnement de signal vers variateur SEVCON Gen4, failsafes industriels et bus I2C.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 140 H340 L400 90 H840 L900 140 H1440"/>
+    <path class="pcb-trace" d="M0 700 H280 L360 640 H720 L800 700 H1440"/>
+    <path class="pcb-trace" d="M180 0 V240 L260 320 V580"/>
+    <path class="pcb-trace" d="M1260 0 V200 L1180 280 V540"/>
+    <circle class="pcb-pad" cx="400" cy="90" r="6"/><circle class="pcb-pad" cx="900" cy="140" r="6"/>
+    <circle class="pcb-pad" cx="360" cy="640" r="6"/><circle class="pcb-pad" cx="260" cy="320" r="6"/>
+    <circle class="pcb-via" cx="840" cy="90" r="4"/><circle class="pcb-via" cx="720" cy="640" r="4"/>
+  </svg>
+
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">// Profil</a></li>
+      <li><a href="but1.html">// BUT1</a></li>
+      <li><a href="but2.html">// BUT2</a></li>
+      <li><a href="but3-ese.html" class="active">// BUT3</a></li>
+      <li><a href="projets.html">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head wrap">
+    <div class="breadcrumb reveal"><a href="index.html">~/accueil</a><span class="sep">/</span><a href="but3-ese.html">but3-ese</a><span class="sep">/</span>kart-electrique</div>
+    <div class="section-tag reveal">SAÉ · Semestre 6 · Systèmes Embarqués</div>
+    <h1 class="reveal d1">🏎️ Kart <span class="accent">Électrique</span></h1>
+    <p class="lead reveal d2">Conception du <strong style="color:var(--txt)">contrôleur bas niveau</strong> d'un kart électrique de compétition : mesure de vitesse, gestion du freinage, pilotage de la puissance et communication I2C avec le master Raspberry Pi. Le PCB et le routage ont été <span class="em">validés et sont 100 % fonctionnels</span>.</p>
+  </header>
+
+  <section class="wrap" style="padding-top:10px">
+    <div class="telemetry">
+      <div class="stat reveal"><div class="num"><span data-count="16" data-suffix=" MHz">0</span></div><div class="label">ATmega328P-AU</div></div>
+      <div class="stat reveal d1"><div class="num"><span data-count="10" data-suffix=" kHz">0</span></div><div class="label">PWM Timer 1</div></div>
+      <div class="stat reveal d2"><div class="num"><span data-count="48" data-suffix=" V">0</span></div><div class="label">Bus batterie</div></div>
+      <div class="stat reveal d3"><div class="num">0x22</div><div class="label">Adresse I2C</div></div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="wrap">
+    <div class="section-tag reveal">01 — Vue d'ensemble</div>
+    <h2 class="section-title reveal">Architecture du système</h2>
+    <div class="grid grid-2" style="margin-top:26px; align-items:start">
+      <div class="prose reveal">
+        <p>Le PCB joue le rôle de <strong>cerveau temps réel</strong> entre les capteurs du kart, le calculateur de haut niveau (Raspberry Pi) et le variateur de puissance. Il lit en continu la vitesse, l'état du frein et la consigne d'accélération, puis génère le signal de commande conditionné qui pilote le moteur via le variateur SEVCON.</p>
+        <p>Trois modes de fonctionnement cohabitent : <span class="chip">Manuel</span> (potentiomètre pilote), <span class="chip">Auto</span> (consigne reçue par I2C depuis le master) et <span class="chip">Neutre</span> (sécurité, consigne nulle).</p>
+        <p>L'alimentation est tirée des convertisseurs <em class="em">step-down</em> du kart selon la chaîne <strong>48 V → 12 V → 5 V</strong>.</p>
+      </div>
+      <div class="terminal reveal d1">
+        <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="name">data_flow.map</span></div>
+<pre><span class="m"># chaîne de traitement bas niveau</span>
+Capteur vitesse  <span class="a">─▶</span> ATmega328P <span class="a">─┐</span>
+Frein (pédale)   <span class="a">─▶</span> ATmega328P  <span class="a">│</span>
+Potentiomètre    <span class="a">─▶</span> ATmega328P  <span class="a">│</span>
+Raspberry Pi <span class="c">I2C 0x22</span> <span class="a">◀▶</span>  <span class="a">│</span>
+                              <span class="a">▼</span>
+        PWM 10kHz <span class="a">▶</span> RC <span class="a">▶</span> AOP(x2) <span class="a">▶</span> ÷11
+                              <span class="a">▼</span>
+                  <span class="c">SEVCON Gen4 Size 6</span> <span class="a">▶</span> Moteur</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware -->
+  <section class="wrap">
+    <div class="section-tag reveal">02 — Hardware &amp; Stack</div>
+    <h2 class="section-title reveal">Conception électronique</h2>
+    <ul class="spec-list reveal" style="margin-top:24px">
+      <li><span class="k">MCU</span><span class="v"><strong>ATmega328P-AU</strong> en boîtier CMS, cadencé à 16 MHz.</span></li>
+      <li><span class="k">Alimentation</span><span class="v">5 V tirés des convertisseurs <em>step-down</em> du kart : 48 V → 12 V → 5 V.</span></li>
+      <li><span class="k">Capteur vitesse</span><span class="v">Fourche optique <strong>OPB815WZ</strong>, roue à 32 trous (périmètre 0,85 m) → Pin 2 sur <strong>interruption hardware</strong>.</span></li>
+      <li><span class="k">Capteur frein</span><span class="v">Pédale physique → Pin 4 en <em>pull-up</em>. Action prioritaire dans la logique de sécurité.</span></li>
+      <li><span class="k">Accélérateur</span><span class="v">Potentiomètre en mode Manuel → entrée analogique A0.</span></li>
+      <li><span class="k">Autorisation traction</span><span class="v">Ligne <strong>FS1</strong> du SEVCON commutée via un transistor CMS <strong>BC817</strong> (Pin 8).</span></li>
+      <li><span class="k">Consigne vitesse</span><span class="v">Sortie <strong>PWM 10 kHz</strong> générée par le <strong>Timer 1</strong> (Pin 9).</span></li>
+      <li><span class="k">Conditionnement</span><span class="v">Filtre <strong>RC</strong> → <strong>AOP gain ×2</strong> → pont diviseur <strong>÷11</strong>, pour matcher l'entrée analogique et la <em>dead-band</em> du variateur.</span></li>
+      <li><span class="k">Communication</span><span class="v">Bus <strong>I2C</strong> avec le Raspberry Pi master, adresse <strong>0x22</strong>.</span></li>
+      <li><span class="k">Variateur</span><span class="v"><strong>SEVCON Gen4 Size 6</strong> — pilotage de la puissance moteur.</span></li>
+    </ul>
+
+    <div class="callout reveal d1" style="margin-top:26px">
+      <span class="icon">◈</span>
+      <div><h4>Le cœur du défi : le conditionnement de signal</h4>
+      <p>Le variateur SEVCON attend une consigne analogique précise, bornée par une <em>dead-band</em>. Le PWM brut du microcontrôleur ne peut pas l'attaquer directement : le signal traverse un <strong>filtre RC</strong> (lissage en tension), un <strong>amplificateur opérationnel de gain ×2</strong>, puis un <strong>pont diviseur ÷11</strong> pour tomber exactement dans la plage utile du variateur. C'est ce conditionnement analogique qui garantit une réponse linéaire et sûre de la traction.</p></div>
+    </div>
+  </section>
+
+  <!-- Safety -->
+  <section class="wrap">
+    <div class="section-tag reveal">03 — Sécurités &amp; Failsafes</div>
+    <h2 class="section-title reveal">Code de niveau industriel</h2>
+    <p class="lead reveal">Sur un véhicule de puissance, un emballement moteur est inacceptable. Le firmware embarque plusieurs garde-fous redondants.</p>
+    <div class="grid grid-3" style="margin-top:26px">
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">⏱ Watchdog matériel</h3>
+        <p>Activé via <code class="chip" style="font-size:.74rem">avr/wdt.h</code>. Reset automatique du microcontrôleur si la boucle principale se bloque plus de <strong>2 secondes</strong>.</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">📡 Timeout I2C</h3>
+        <p>Sans trame du Raspberry Pi pendant <strong>500 ms</strong>, le kart bascule automatiquement en mode <strong>Neutre</strong> (consigne PWM à 0).</p></div>
+      <div class="card reveal d2"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">🛑 Frein prioritaire</h3>
+        <p>L'appui sur la pédale de frein prend le pas sur toute consigne d'accélération, quel que soit le mode actif.</p></div>
+    </div>
+
+    <div class="callout warn reveal d1" style="margin-top:26px">
+      <span class="icon">⚠</span>
+      <div><h4>Power-up sequence — procédure de démarrage</h4>
+      <p>Pour éviter tout dommage matériel ou comportement imprévu du variateur SEVCON, l'ordre d'allumage est strict :
+      <strong>1.</strong> connecter le PCB et vérifier le câblage · <strong>2.</strong> tourner le sectionneur général des batteries · <strong>3.</strong> tourner la clé de commande du variateur · <strong>4.</strong> attendre le « clac » du relais interne · <strong>5.</strong> engager le sélecteur 3 positions (sens de marche).</p></div>
+    </div>
+  </section>
+
+  <!-- Architecture diagram -->
+  <section class="wrap">
+    <div class="section-tag reveal">04 — Chaîne de commande</div>
+    <h2 class="section-title reveal">Du capteur au moteur</h2>
+    <p class="lead reveal">La chaîne complète, du bus batterie jusqu'à la consigne reçue par le variateur SEVCON.</p>
+    <div class="flow reveal">
+      <div class="node"><span class="nt">Énergie</span><span class="nv">Batterie 48 V</span><span class="ns">48→12→5 V step-down</span></div>
+      <span class="sep">▸</span>
+      <div class="node"><span class="nt">Entrées</span><span class="nv">Capteurs</span><span class="ns">Vitesse · Frein · Potentiomètre</span></div>
+      <span class="sep">▸</span>
+      <div class="node accent"><span class="nt">Calculateur</span><span class="nv">PCB ATmega328P</span><span class="ns">I2C 0x22 ◀▶ Raspberry Pi</span></div>
+      <span class="sep">▸</span>
+      <div class="node"><span class="nt">Conditionnement</span><span class="nv">PWM 10 kHz</span><span class="ns">RC → AOP ×2 → ÷11</span></div>
+      <span class="sep">▸</span>
+      <div class="node"><span class="nt">Puissance</span><span class="nv">SEVCON Gen4</span><span class="ns">FS1 + consigne → Moteur</span></div>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">▶ Mode Manuel</h3><p>Consigne pilotée directement par le potentiomètre d'accélérateur (entrée A0).</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">▶ Mode Auto</h3><p>Consigne de vitesse reçue par I2C depuis le Raspberry Pi master — base du futur correcteur PID.</p></div>
+      <div class="card reveal d2"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">▶ Mode Neutre</h3><p>État de sécurité : consigne PWM forcée à 0 (frein, timeout I2C ou démarrage).</p></div>
+    </div>
+  </section>
+
+  <!-- Galerie réelle -->
+  <section class="wrap">
+    <div class="section-tag reveal">05 — En images</div>
+    <h2 class="section-title reveal">Le kart &amp; son étage de puissance</h2>
+    <p class="lead reveal">Le kart électrique instrumenté et le variateur SEVCON câblé à la chaîne de puissance.</p>
+    <div class="gallery reveal" style="margin-top:24px; grid-template-columns:repeat(2,1fr)">
+      <figure><img data-lightbox src="medias/IMG_4202 (1).jpeg" alt="Kart électrique instrumenté"><figcaption>// kart_global — volant, batteries, électronique embarquée</figcaption></figure>
+      <figure><img data-lightbox src="medias/IMG_4208 (1).jpeg" alt="Variateur SEVCON et câblage de puissance"><figcaption>// sevcon — variateur Gen4 &amp; câbles de puissance</figcaption></figure>
+    </div>
+    <p class="lead reveal" style="margin-top:18px; font-size:.92rem; color:var(--txt-faint)">// Schémas KiCad du conditionnement de signal disponibles dans le rapport technique du projet.</p>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="wrap">
+    <div class="section-tag reveal">06 — Roadmap</div>
+    <h2 class="section-title reveal">Perspectives — Next Steps</h2>
+    <div class="grid grid-2 reveal" style="margin-top:24px; align-items:start">
+      <div class="ac-block">
+        <h4><span class="comp">Software</span> Régulation</h4>
+        <div class="ac-item"><span class="title">Correcteur PID complet</span><p>Remplacer la régulation proportionnelle du mode Auto par un vrai PID (ajout des termes intégral et dérivé).</p></div>
+        <div class="ac-item"><span class="title">Gestion du sens de marche</span><p>Intégrer le Forward/Reverse dans la machine à états pour adapter le comportement.</p></div>
+      </div>
+      <div class="ac-block">
+        <h4><span class="comp">Hardware</span> Sécurité</h4>
+        <div class="ac-item"><span class="title">2ᵉ arrêt d'urgence pilote</span><p>Câbler le bouton d'arrêt déjà présent sur le tableau de bord pour le rendre directement accessible au pilote.</p></div>
+        <div class="ac-item"><span class="title">Documentation technique</span><p>Rapport technique complet (machine à états, protocole I2C) et projet KiCad du conditionnement de signal.</p></div>
+      </div>
+    </div>
+    <div style="margin-top:34px; display:flex; gap:14px; flex-wrap:wrap" class="reveal">
+      <a href="projet-stage.html" class="btn btn-primary">▸ Voir le stage R&D drone</a>
+      <a href="but3-ese.html" class="btn btn-ghost">← Retour à la collection</a>
+    </div>
+  </section>
+
+  <div class="lightbox"><button class="close" aria-label="Fermer">✕</button><img src="" alt="Aperçu"></div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="but3-ese.html">← BUT3 ESE</a>
+        <a href="projet-stage.html">Stage →</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

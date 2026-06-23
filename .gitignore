@@ -1,0 +1,13 @@
+# Export Mahara brut (non utilisé par le site reconstruit)
+HTML/
+
+# Documents sources à la racine (non référencés par le site ; le rapport est dans medias/)
+/programme_national_geii.pdf
+/RAPPORT_STAGE_CAPSEC_2026 (1).pdf
+/SAE S6 GEII*.pdf
+/sae_kart.md
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+*~

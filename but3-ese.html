@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Troisième Année — ESE · Amine Atamna</title>
+  <meta name="description" content="Collection BUT3 GEII parcours Électronique et Systèmes Embarqués : projet Kart électrique et stage R&D drone autonome CapSec, articulés autour des apprentissages critiques de niveau 3.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 160 H320 L380 100 H820 L880 160 H1440"/>
+    <path class="pcb-trace" d="M0 720 H260 L340 660 H700 L780 720 H1440"/>
+    <path class="pcb-trace" d="M160 0 V260 L240 340 V600"/>
+    <path class="pcb-trace" d="M1280 0 V220 L1200 300 V560"/>
+    <circle class="pcb-pad" cx="380" cy="100" r="6"/><circle class="pcb-pad" cx="880" cy="160" r="6"/>
+    <circle class="pcb-pad" cx="340" cy="660" r="6"/><circle class="pcb-pad" cx="240" cy="340" r="6"/>
+    <circle class="pcb-via" cx="820" cy="100" r="4"/><circle class="pcb-via" cx="700" cy="660" r="4"/>
+  </svg>
+
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">// Profil</a></li>
+      <li><a href="but1.html">// BUT1</a></li>
+      <li><a href="but2.html">// BUT2</a></li>
+      <li><a href="but3-ese.html" class="active">// BUT3</a></li>
+      <li><a href="projets.html">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head wrap">
+    <div class="breadcrumb reveal"><a href="index.html">~/accueil</a><span class="sep">/</span>collection<span class="sep">/</span>but3-ese</div>
+    <div class="section-tag reveal">Collection · 2025 — 2026</div>
+    <h1 class="reveal d1">Troisième Année — <span class="accent">ESE</span></h1>
+    <p class="lead reveal d2">Ma dernière année de BUT GEII, parcours <strong style="color:var(--txt)">Électronique et Systèmes Embarqués</strong>, structurée autour de deux temps forts : la <strong style="color:var(--txt)">SAÉ Kart Électrique</strong> (S6) et un <strong style="color:var(--txt)">stage R&D de 3 mois</strong> sur un système de drone autonome de recherche et sauvetage. Deux projets exigeants où j'ai couvert l'ensemble des compétences de <span class="em">niveau 3</span> du référentiel.</p>
+  </header>
+
+  <!-- Projects -->
+  <section class="wrap" style="padding-top:20px">
+    <div class="grid grid-2">
+      <a href="projet-kart.html" class="card proj-card reveal">
+        <div class="proj-thumb"><div class="scanline"></div>
+          <span class="proj-badge">SAÉ · S6 · CONCEVOIR</span>
+          <img src="medias/IMG_4202 (1).jpeg" alt="Kart électrique">
+        </div>
+        <div class="proj-body">
+          <h3>SAÉ — Kart Électrique</h3>
+          <p style="margin-bottom:14px">Conception du contrôleur bas niveau du kart : firmware ATmega328P, conditionnement de signal vers variateur SEVCON Gen4, failsafes de niveau industriel, communication I2C avec le master Raspberry Pi.</p>
+          <p><span class="chip">ATmega328P</span> <span class="chip">PWM 10 kHz</span> <span class="chip">I2C</span> <span class="chip">KiCad</span></p>
+          <p style="margin-top:14px">Lire l'étude complète <span class="arrow">→</span></p>
+        </div>
+      </a>
+      <a href="projet-stage.html" class="card proj-card reveal d1">
+        <div class="proj-thumb diagram">
+          <span class="proj-badge">STAGE · 3 MOIS · R&D</span>
+          <span class="glyph"><span class="ico">🚁</span>ARODE · R&D</span>
+        </div>
+        <div class="proj-body">
+          <h3>Stage R&D — CapSec · Projet ARODE</h3>
+          <p style="margin-bottom:14px">Du prototype au système opérationnel : détection IA temps réel, reconstruction 3D GPU, intégration cloud DJI et conception d'un drone custom pour les missions autonomes de sauvetage.</p>
+          <p><span class="chip">IA embarquée</span> <span class="chip">Docker/MQTT</span> <span class="chip">Jetson Orin</span> <span class="chip">Drone custom</span></p>
+          <p style="margin-top:14px">Lire le rapport complet <span class="arrow">→</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- AC Referential -->
+  <section class="wrap">
+    <div class="section-tag reveal">Référentiel national GEII</div>
+    <h2 class="section-title reveal">Apprentissages Critiques — Niveau 3 ESE</h2>
+    <p class="lead reveal">Les compétences <strong style="color:var(--txt)">Niveau 3</strong> du programme national de BUT GEII, parcours ESE, et leur mise en œuvre concrète dans mes projets de 3ᵉ année.</p>
+
+    <div class="grid grid-2" style="margin-top:30px; align-items:start">
+      <div class="ac-block reveal">
+        <h4><span class="comp">Compétence 1</span> Concevoir</h4>
+        <p style="color:var(--txt-dim); font-size:.9rem; margin:0 0 8px"><em>Concevoir un système en adoptant une approche sélective dans ses choix.</em></p>
+        <div class="ac-item"><span class="code">AC31.01</span> · <span class="title">Contribuer à la rédaction d'un cahier des charges</span>
+          <p>Définition des contraintes du contrôleur kart (chaîne 48→5 V, dead-band variateur) et des besoins opérateur du système ARODE.</p></div>
+        <div class="ac-item"><span class="code">AC31.02</span> · <span class="title">Prouver la pertinence de ses choix technologiques</span>
+          <p>Dérisquage par comparaison : RTMP vs RTSP/WebRTC pour le streaming drone, choix de l'écosystème SIYI vs DJI pour le drone custom.</p></div>
+        <div class="ac-item"><span class="code">AC31.03</span> · <span class="title">Rédiger un dossier de conception</span>
+          <p>Schémas d'architecture (Mermaid, draw.io), documentation Markdown des modules, dossier technique du PCB kart.</p></div>
+      </div>
+
+      <div class="ac-block reveal d1">
+        <h4><span class="comp">Compétence 2</span> Vérifier</h4>
+        <p style="color:var(--txt-dim); font-size:.9rem; margin:0 0 8px"><em>Élaborer une procédure intégrant une démarche qualité pour valider un système.</em></p>
+        <div class="ac-item"><span class="code">AC32.01</span> · <span class="title">Évaluer la cause racine d'un dysfonctionnement</span>
+          <p>Diagnostic du <code class="chip" style="font-size:.74rem">TelemetryGate</code> bloquant le pipeline IA (<code class="chip" style="font-size:.74rem">altitude_max = undefined</code>), freeze du flux après stop/restart.</p></div>
+        <div class="ac-item"><span class="code">AC32.02</span> · <span class="title">Proposer une solution corrective</span>
+          <p>Correctifs frontend, génération KMZ et configuration Docker validés par re-test terrain sur les mêmes scénarios.</p></div>
+        <div class="ac-item"><span class="code">AC32.03</span> · <span class="title">Produire une procédure d'essais de conformité</span>
+          <p>Tests de latence, stabilité connexion, qualité du flux et précision des waypoints ; validation de la chaîne capture → détection → affichage.</p></div>
+      </div>
+
+      <div class="ac-block reveal">
+        <h4><span class="comp">Compétence 3</span> Maintenir</h4>
+        <p style="color:var(--txt-dim); font-size:.9rem; margin:0 0 8px"><em>Mettre en place une stratégie de maintenance pour garantir un fonctionnement.</em></p>
+        <div class="ac-item"><span class="code">AC33.01</span> · <span class="title">Proposer une solution de maintenance</span>
+          <p>Architecture conteneurisée (Docker Compose) permettant de redémarrer une stack identique en quelques secondes ; microservices isolés.</p></div>
+        <div class="ac-item"><span class="code">AC33.02</span> · <span class="title">Évaluer les coûts d'indisponibilité</span>
+          <p>Consolidation de la nomenclature (BOM) et cartographie fournisseurs du drone custom, suivi des délais de réception.</p></div>
+        <div class="ac-item"><span class="code">AC33.03</span> · <span class="title">Produire une procédure de maintenance</span>
+          <p>Procédure d'allumage (power-up sequence) du kart ; journalisation détaillée et auto-reconnexion du système ARODE.</p></div>
+      </div>
+
+      <div class="ac-block reveal d1">
+        <h4><span class="comp">Compétence 4</span> Implanter</h4>
+        <p style="color:var(--txt-dim); font-size:.9rem; margin:0 0 8px"><em>Réaliser un système et le mettre en service en interagissant avec les acteurs.</em></p>
+        <div class="ac-item"><span class="code">AC34.01 ESE</span> · <span class="title">Produire une procédure d'installation &amp; de mise en service</span>
+          <p>Installation du projet ARODE sur le serveur bi-GPU du partenaire : drivers CUDA, runtime NVIDIA conteneurs, broker Mosquitto, adressage réseau.</p></div>
+        <div class="ac-item"><span class="code">AC34.02 ESE</span> · <span class="title">Exécuter la mise en service en respectant la procédure</span>
+          <p>Déploiement de la stack multi-services, configuration de la Jetson Orin Nano (JetPack), flashage de l'ATmega du kart.</p></div>
+        <div class="ac-item"><span class="code">AC34.03 ESE</span> · <span class="title">Produire le dossier de conformité &amp; gérer le versionnage</span>
+          <p>Documentation versionnée dans <code class="chip" style="font-size:.74rem">docs/</code> (architecture, déploiement, SAM 3D, Mosquitto, KMZ), schémas cliquables pour la reprise du projet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="projet-kart.html">Kart →</a>
+        <a href="projet-stage.html">Stage →</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

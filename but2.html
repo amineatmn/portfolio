@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deuxième Année — ESE · Amine Atamna</title>
+  <meta name="description" content="Deuxième année de BUT GEII parcours Électronique et Systèmes Embarqués : voiture autonome, banc de test haut-parleur, commande moteur brushless FPGA, escape bot et premier stage CapSec.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 160 H360 L420 100 H860 L920 160 H1440"/>
+    <path class="pcb-trace" d="M0 720 H300 L380 660 H740 L820 720 H1440"/>
+    <path class="pcb-trace" d="M200 0 V260 L280 340 V600"/>
+    <circle class="pcb-pad" cx="420" cy="100" r="6"/><circle class="pcb-pad" cx="920" cy="160" r="6"/>
+    <circle class="pcb-pad" cx="380" cy="660" r="6"/>
+    <circle class="pcb-via" cx="860" cy="100" r="4"/>
+  </svg>
+
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">// Profil</a></li>
+      <li><a href="but1.html">// BUT1</a></li>
+      <li><a href="but2.html" class="active">// BUT2</a></li>
+      <li><a href="but3-ese.html">// BUT3</a></li>
+      <li><a href="projets.html">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head wrap">
+    <div class="breadcrumb reveal"><a href="index.html">~/accueil</a><span class="sep">/</span>collection<span class="sep">/</span>but2-ese</div>
+    <div class="section-tag reveal">Collection · Deuxième Année — ESE</div>
+    <h1 class="reveal d1">Deuxième Année — <span class="accent">ESE</span></h1>
+    <p class="lead reveal d2">L'entrée dans le parcours <strong style="color:var(--txt)">Électronique et Systèmes Embarqués</strong> : développement logiciel embarqué (C++/Qt, VHDL), instrumentation et mesure, robotique autonome, et un premier <strong style="color:var(--txt)">stage R&D</strong> chez CapSec. Une année qui a confirmé ma voie.</p>
+  </header>
+
+  <!-- Sommaire -->
+  <section class="wrap" style="padding-top:10px">
+    <div class="grid grid-3 reveal">
+      <a class="card" href="#voiture" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">SAÉ 3.1 · Voiture Autonome</h3><p>Qt/C++, TCP, LiDAR 360 · 🏆 2ᵉ à Cachan</p></a>
+      <a class="card" href="#banc" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">SAÉ 3.2 · Banc de Test HP</h3><p>Impédance haut-parleur, FFT, Matlab</p></a>
+      <a class="card" href="#brushless" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">SAÉ 4.1 · Brushless FPGA</h3><p>Commande moteur en VHDL</p></a>
+      <a class="card" href="#escape" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">SAÉ 4.2 · Escape Bot</h3><p>Robot mobile, Pixy, Raspberry Pi Pico</p></a>
+      <a class="card" href="#stage" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">Stage · CapSec 2025</h3><p>Premier stage sur le projet ARODE</p></a>
+    </div>
+  </section>
+
+  <!-- 3.1 Voiture autonome -->
+  <section class="wrap" id="voiture">
+    <div class="sae-head reveal"><span class="saeid">SAÉ 3.1</span><span class="dur">binôme · 🏆 2ᵉ place concours robotique de Cachan</span></div>
+    <h2 class="section-title reveal">Voiture Autonome</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Conception de la <strong>partie logicielle</strong> d'une voiture capable de naviguer de façon autonome, d'abord en simulation puis en réel. Le projet a combiné <strong>programmation orientée objet en C++</strong> et framework <strong>Qt</strong>, avec l'exploitation d'un capteur <span class="em">LiDAR 360</span>.</p>
+      <p>En binôme avec M. Samahri (chargé du contrôle et de l'algorithmique de navigation), je me suis concentré sur l'<strong>interface utilisateur</strong> et la <strong>communication client-serveur TCP</strong> : piloter la voiture à distance et visualiser les données de navigation en temps réel. Une expérience prolongée par une <strong>2ᵉ place au concours de robotique de Cachan</strong>.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/1750271742023.jpg" alt="Voiture autonome"><figcaption>// voiture_01</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750271793660.jpg" alt="Voiture autonome"><figcaption>// voiture_02</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750271963857.jpg" alt="Voiture autonome"><figcaption>// voiture_03</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750272044987.jpg" alt="Voiture autonome"><figcaption>// voiture_04</figcaption></figure>
+      <figure><img data-lightbox src="medias/image (1).png" alt="Interface de la voiture autonome"><figcaption>// interface_Qt</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC21.01</span> <span class="chip">Vérifier · AC22.01</span> <span class="chip">Maintenir · AC23.02/03</span> <span class="chip">Implanter · AC24.01/02 ESE</span></p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- 3.2 Banc HP -->
+  <section class="wrap" id="banc">
+    <div class="sae-head reveal"><span class="saeid">SAÉ 3.2</span><span class="dur">Chaîne d'acquisition / restitution</span></div>
+    <h2 class="section-title reveal">Banc de Test Haut-Parleur</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Mesurer et caractériser l'<strong>impédance d'un haut-parleur</strong>. Le projet a débuté par une approche <strong>analogique</strong> — banc de test basé sur la corrélation sinusoïdale, avec amplificateurs de courant (<span class="em">source de Howland</span>) et multiplieurs.</p>
+      <p>Puis transition vers un système <strong>entièrement numérique</strong> : numérisation des signaux, convertisseurs CAN/CNA, et implémentation d'une <strong>FFT</strong> pour l'analyse fréquentielle. Un projet exigeant en traitement du signal et instrumentation, mené sous <strong>Matlab</strong> et <strong>Arduino</strong>.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/1750273581542 (1).jpg" alt="Banc de test haut-parleur"><figcaption>// banc_01</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750273581566.jpg" alt="Banc de test haut-parleur"><figcaption>// banc_02</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750273581584.jpg" alt="Banc de test haut-parleur"><figcaption>// banc_03</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750273581599.jpg" alt="Banc de test haut-parleur"><figcaption>// banc_04</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750273581613.jpg" alt="Banc de test haut-parleur"><figcaption>// banc_05</figcaption></figure>
+      <figure><img data-lightbox src="medias/1750273581627.jpg.1.jpg" alt="Banc de test haut-parleur"><figcaption>// banc_06</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC21.01</span> Source de Howland, FFT &nbsp; <span class="chip">Vérifier · AC22.01</span> Protocole de mesure d'impédance &nbsp; <span class="chip">Maintenir · AC23.01</span> <span class="chip">Implanter · AC24.01 ESE</span></p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- 4.1 Brushless FPGA -->
+  <section class="wrap" id="brushless">
+    <div class="sae-head reveal"><span class="saeid">SAÉ 4.1</span><span class="dur">binôme · contrôle moteur</span></div>
+    <h2 class="section-title reveal">Commande d'un moteur Brushless — FPGA</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Donner vie à un moteur brushless en concevant sa logique de commande en <strong>VHDL</strong> sur cible <strong>FPGA</strong>. Le cœur du projet : la génération des signaux <span class="em">t<sub>H</sub></span>, <span class="em">t<sub>L</sub></span> et <strong>PWM</strong> pilotant les transistors de la carte de puissance, avec validation progressive des modules.</p>
+      <p>Un retour incrémental (codeur) assure la mesure et l'affichage de la vitesse. Le débogage VHDL et l'ajustement des signaux ont demandé une démarche rigoureuse de diagnostic et de correction.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/AP1GczM-PCTW0Zgxats1hkG64Kk8-8tUvf7EaCDdZuZ2rEFju_KzvoZGuOFheww1143-h857-s-no-gm.png" alt="Montage brushless FPGA"><figcaption>// montage_01</figcaption></figure>
+      <figure><img data-lightbox src="medias/AP1GczNdRPWuoAB9N7pTGd6TSpoVrz2utqCeK-l7f2T7xNDIEjg60rPnRyG9pgw643-h857-s-no-gm.png" alt="Montage brushless FPGA"><figcaption>// montage_02</figcaption></figure>
+      <figure><img data-lightbox src="medias/AP1GczO2H0yAYxo08Cs6j2ACNJO8ljGdgOnTS7qeZsEi-TERen8vlnNrQL0lBAw1143-h857-s-no-gm.png" alt="Montage brushless FPGA"><figcaption>// montage_03</figcaption></figure>
+      <figure><img data-lightbox src="medias/AP1GczP9NS62wJc29zlgtFv_Be7hwb0UdRZt9jQFEjPk7p4neqlZnna4k_mwiww643-h857-s-no-gm.png" alt="Montage brushless FPGA"><figcaption>// montage_04</figcaption></figure>
+    </div>
+    <figure class="media-video reveal" style="margin-top:14px; max-width:520px">
+      <video controls preload="metadata" src="medias/VID_20250110_101316 (1).mp4"></video>
+      <figcaption>// démonstration — fonctionnement final</figcaption>
+    </figure>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC21.02</span> Dérisquage logique VHDL &nbsp; <span class="chip">Vérifier · AC22.01</span> <span class="chip">Maintenir · AC23.01/02/03</span> <span class="chip">Implanter · AC24.01 ESE</span></p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- 4.2 Escape Bot -->
+  <section class="wrap" id="escape">
+    <div class="sae-head reveal"><span class="saeid">SAÉ 4.2</span><span class="dur">binôme · robotique autonome</span></div>
+    <h2 class="section-title reveal">Escape Bot</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Un robot mobile capable d'<strong>éviter les obstacles</strong> et de <strong>détecter une balise cible</strong>. Première phase : conception d'un <strong>banc de test pour cartes réceptrices infrarouges</strong> — génération de fréquences IR via une LED pilotée, alimentation de la carte sous test, et interface <strong>Qt Creator</strong> communiquant par IP avec oscilloscope et GBF.</p>
+      <p>Seconde phase : intégration logicielle sur le robot. Ma contribution : la <strong>détection des LEDs colorées de la balise</strong> avec une <strong>caméra Pixy</strong>, programmée en <strong>C sur Raspberry Pi Pico</strong> (sous VS Code), en binôme avec M. Belmeliani.</p>
+    </div>
+    <p class="reveal" style="margin-top:6px"><span class="chip">Concevoir · AC21.01</span> <span class="chip">Vérifier · AC22.01</span> Fréquences IR &nbsp; <span class="chip">Maintenir · AC23.02</span> Débogage C / Qt &nbsp; <span class="chip">Implanter · AC24.01 ESE</span> Interface Qt &amp; scripts</p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- Stage 2025 -->
+  <section class="wrap" id="stage">
+    <div class="sae-head reveal"><span class="saeid">Stage · 2ᵉ année</span><span class="dur">CapSec (UTT) · janvier — mars 2025</span></div>
+    <h2 class="section-title reveal">Premier stage — CapSec · Projet ARODE</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Mon premier stage chez <strong>CapSec</strong>, déjà sur le projet <span class="em">ARODE</span> (drone autonome de recherche et sauvetage). Mission centrée sur la <strong>chaîne de communication et de transmission vidéo</strong> du drone.</p>
+      <p>J'ai adapté l'application Android au nouveau drone, fluidifié la transmission vidéo et garanti la synchronisation images / localisation. Travail de <strong>dérisquage de protocoles</strong> (RTMP vs RTSP, WebRTC), configuration réseau (routeur Wi-Fi) et implémentation via le <strong>SDK DJI</strong>. Une première immersion qui a posé les fondations de mon stage de 3ᵉ année.</p>
+    </div>
+    <p class="reveal" style="margin-top:6px"><span class="chip">Concevoir · AC21.01/02</span> RTMP→RTSP &nbsp; <span class="chip">Vérifier · AC22.01</span> Latence &amp; stabilité &nbsp; <span class="chip">Maintenir · AC23.02/03</span> &nbsp; <span class="chip">Implanter · AC24.01/02 ESE</span></p>
+    <div class="callout reveal d1" style="margin-top:24px">
+      <span class="icon">→</span>
+      <div><h4>La suite : un stage de 3 mois en 3ᵉ année</h4>
+      <p>Ce premier stage a été prolongé en BUT3 par un second stage de <strong>3 mois</strong> chez CapSec, cette fois pour faire passer ARODE du prototype au système opérationnel. <a href="projet-stage.html" style="color:var(--accent)">Découvrir le stage de 3ᵉ année →</a></p></div>
+    </div>
+    <div style="margin-top:34px; display:flex; gap:14px; flex-wrap:wrap" class="reveal">
+      <a href="but3-ese.html" class="btn btn-primary">▸ Voir la 3ᵉ année ESE</a>
+      <a href="but1.html" class="btn btn-ghost">← 1ʳᵉ année</a>
+    </div>
+  </section>
+
+  <div class="lightbox"><button class="close" aria-label="Fermer">✕</button><img src="" alt="Aperçu"></div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="but1.html">← 1ʳᵉ année</a>
+        <a href="but3-ese.html">3ᵉ année →</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

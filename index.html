@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMINE ATAMNA · Portfolio — GEII / Électronique & Systèmes Embarqués</title>
+  <meta name="description" content="Portfolio d'Amine Atamna, étudiant en BUT3 GEII parcours Électronique et Systèmes Embarqués. Drones autonomes, systèmes embarqués, conception PCB.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 120 H300 L360 180 H780 L840 120 H1440"/>
+    <path class="pcb-trace" d="M0 760 H220 L300 680 H640 L720 760 H1100 L1180 700 H1440"/>
+    <path class="pcb-trace" d="M120 0 V240 L200 320 V560 L120 640 V900"/>
+    <path class="pcb-trace" d="M1320 0 V200 L1240 280 V520 L1320 600 V900"/>
+    <path class="pcb-trace" d="M0 440 H520 L600 380 H900"/>
+    <circle class="pcb-pad" cx="360" cy="180" r="6"/>
+    <circle class="pcb-pad" cx="840" cy="120" r="6"/>
+    <circle class="pcb-pad" cx="300" cy="680" r="6"/>
+    <circle class="pcb-pad" cx="720" cy="760" r="6"/>
+    <circle class="pcb-pad" cx="200" cy="320" r="6"/>
+    <circle class="pcb-pad" cx="1240" cy="280" r="6"/>
+    <circle class="pcb-pad" cx="600" cy="380" r="6"/>
+    <circle class="pcb-via" cx="780" cy="180" r="4"/>
+    <circle class="pcb-via" cx="640" cy="680" r="4"/>
+    <circle class="pcb-via" cx="1180" cy="700" r="4"/>
+  </svg>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">// Profil</a></li>
+      <li><a href="but1.html">// BUT1</a></li>
+      <li><a href="but2.html">// BUT2</a></li>
+      <li><a href="but3-ese.html">// BUT3</a></li>
+      <li><a href="projets.html">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-status reveal"><span class="pulse-dot"></span>SYSTÈME EN LIGNE · BUT3 GEII ESE</div>
+        <h1 class="reveal d1">Amine <span class="accent">Atamna</span></h1>
+        <p class="role reveal d1"><span data-typewriter='["Électronique & Systèmes Embarqués","Développement logiciel embarqué","Drones autonomes & IA","Conception & routage PCB"]'>Électronique & Systèmes Embarqués</span></p>
+        <p class="intro reveal d2">Étudiant en 3ᵉ année de BUT Génie Électrique et Informatique Industrielle, parcours <strong style="color:var(--txt)">Électronique et Systèmes Embarqués</strong> à l'IUT de Troyes. Je conçois des systèmes embarqués de bout en bout — du firmware bas niveau au pilotage de drones autonomes — avec une passion pour l'électronique de pointe.</p>
+        <div class="hero-cta reveal d3">
+          <a href="projets.html" class="btn btn-primary">▸ Explorer les projets</a>
+          <a href="contact.html" class="btn btn-ghost">◈ Me contacter</a>
+        </div>
+      </div>
+      <div class="hud-portrait reveal d2">
+        <span class="ring"></span><span class="ring two"></span>
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <span class="corner bl"></span><span class="corner br"></span>
+        <span class="scan"></span>
+        <img src="medias/profil.png" alt="Portrait d'Amine Atamna">
+      </div>
+    </div>
+  </header>
+
+  <!-- TELEMETRY -->
+  <section class="wrap" style="padding-top:10px">
+    <div class="telemetry">
+      <div class="stat reveal"><div class="num"><span data-count="3" data-suffix="">0</span></div><div class="label">Années BUT GEII</div></div>
+      <div class="stat reveal d1"><div class="num"><span data-count="3" data-suffix=" mois">0</span></div><div class="label">Stage R&D CapSec</div></div>
+      <div class="stat reveal d2"><div class="num"><span data-count="2" data-suffix="ᵉ">0</span></div><div class="label">Concours robotique Cachan</div></div>
+      <div class="stat reveal d3"><div class="num"><span data-count="10" data-suffix="+">0</span></div><div class="label">Projets / SAÉ menés</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="wrap">
+    <div class="section-tag reveal">01 — À propos</div>
+    <h2 class="section-title reveal">Profil de l'ingénieur</h2>
+    <div class="grid grid-2" style="margin-top:28px; align-items:start">
+      <div class="prose reveal">
+        <p>Tout au long de mon cursus, ma curiosité pour les matières scientifiques m'a naturellement conduit vers le <strong>Génie Électrique et Informatique Industrielle</strong>. Cette envie de comprendre — et de maîtriser — le monde technique qui m'entoure est le fil rouge de mon parcours.</p>
+        <p>Aujourd'hui spécialisé en <span class="em">Électronique et Systèmes Embarqués</span>, j'évolue à l'intersection du matériel et du logiciel : firmware sur microcontrôleur, conditionnement de signal analogique, routage PCB, communication réseau et, plus récemment, intelligence artificielle embarquée appliquée aux drones autonomes de recherche et sauvetage.</p>
+        <p>Mon objectif : concevoir des systèmes embarqués <strong>fiables, robustes et utiles</strong>, jusqu'au déploiement en conditions réelles.</p>
+      </div>
+      <div class="card reveal d1">
+        <span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">// stack.json</h3>
+        <ul class="spec-list" style="border:0; background:transparent; gap:0">
+          <li style="grid-template-columns:160px 1fr; padding:11px 0; background:transparent"><span class="k">Embarqué</span><span class="v">C / C++, Arduino, ATmega328P, ESP32, FPGA, Jetson Orin Nano</span></li>
+          <li style="grid-template-columns:160px 1fr; padding:11px 0; background:transparent"><span class="k">Logiciel</span><span class="v">Python, Qt, Next.js, FastAPI, Docker, MQTT</span></li>
+          <li style="grid-template-columns:160px 1fr; padding:11px 0; background:transparent"><span class="k">Électronique</span><span class="v">KiCad, conditionnement de signal, PWM, I2C, mesure</span></li>
+          <li style="grid-template-columns:160px 1fr; padding:11px 0; background:transparent"><span class="k">Domaines</span><span class="v">Drones autonomes, IA embarquée, robotique, contrôle moteur</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS / NAV CARDS -->
+  <section class="wrap">
+    <div class="section-tag reveal">02 — Navigation</div>
+    <h2 class="section-title reveal">Explorer le portfolio</h2>
+    <p class="lead reveal">Le cœur de ce portfolio : ma <strong style="color:var(--txt)">3ᵉ année ESE</strong>, avec le projet Kart Électrique et mon stage R&D drone chez CapSec.</p>
+    <div class="grid grid-3" style="margin-top:30px">
+      <a href="but3-ese.html" class="card proj-card reveal">
+        <div class="proj-thumb diagram"><span class="proj-badge">COLLECTION · 2025-26</span>
+          <span class="glyph"><span class="ico">🛰️</span>BUT3 · ESE</span>
+        </div>
+        <div class="proj-body"><h3>Troisième Année — ESE</h3><p>Kart électrique &amp; stage R&D drone autonome. <span class="arrow">→</span></p></div>
+      </a>
+      <a href="projet-kart.html" class="card proj-card reveal d1">
+        <div class="proj-thumb"><div class="scanline"></div><span class="proj-badge">SAÉ · S6</span>
+          <img src="medias/IMG_4202 (1).jpeg" alt="Kart électrique">
+        </div>
+        <div class="proj-body"><h3>Kart Électrique</h3><p>Contrôleur ATmega328P, PWM 10 kHz, variateur SEVCON. <span class="arrow">→</span></p></div>
+      </a>
+      <a href="projet-stage.html" class="card proj-card reveal d2">
+        <div class="proj-thumb diagram"><span class="proj-badge">STAGE · 3 MOIS</span>
+          <span class="glyph"><span class="ico">🚁</span>ARODE · R&D</span>
+        </div>
+        <div class="proj-body"><h3>Stage R&D — CapSec</h3><p>Projet ARODE : drone autonome de recherche &amp; sauvetage. <span class="arrow">→</span></p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- PARCOURS PAR ANNÉE -->
+  <section class="wrap" style="padding-top:0">
+    <div class="section-tag reveal">03 — Parcours complet</div>
+    <h2 class="section-title reveal">Les trois années de BUT</h2>
+    <p class="lead reveal">Du premier circuit imprimé soudé aux systèmes embarqués les plus avancés — explorez chaque année du parcours.</p>
+    <div class="grid grid-3" style="margin-top:30px">
+      <a href="but1.html" class="card reveal" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">01 · Première Année</h3>
+        <p style="margin-bottom:10px">Les fondamentaux : multimètre, régulation thermique, robot suiveur de ligne, automatisme &amp; énergie, shield Arduino.</p>
+        <p><span class="chip">Arduino</span> <span class="chip">KiCad</span> <span class="chip">GRAFCET</span></p>
+        <p style="margin-top:12px; font-family:var(--mono); color:var(--accent)">Explorer →</p></a>
+      <a href="but2.html" class="card reveal d1" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">02 · Deuxième Année — ESE</h3>
+        <p style="margin-bottom:10px">Voiture autonome (Qt/C++), banc de test haut-parleur, brushless FPGA (VHDL), escape bot, et 1ᵉʳ stage CapSec.</p>
+        <p><span class="chip">C++/Qt</span> <span class="chip">VHDL</span> <span class="chip">🏆 Cachan</span></p>
+        <p style="margin-top:12px; font-family:var(--mono); color:var(--accent)">Explorer →</p></a>
+      <a href="but3-ese.html" class="card reveal d2" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">03 · Troisième Année — ESE</h3>
+        <p style="margin-bottom:10px">Kart électrique (ATmega328P) &amp; stage R&D de 3 mois sur le drone autonome ARODE.</p>
+        <p><span class="chip">Embarqué</span> <span class="chip">IA</span> <span class="chip">Drone</span></p>
+        <p style="margin-top:12px; font-family:var(--mono); color:var(--accent)">Explorer →</p></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="https://www.linkedin.com/in/amineatamna/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:amine.atamna@etudiant.univ-reims.fr">Email ↗</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

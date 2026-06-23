@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stage R&D — CapSec · Projet ARODE · Amine Atamna</title>
+  <meta name="description" content="Stage de 3 mois chez CapSec (UTT) sur le projet ARODE : système de drone autonome de recherche et sauvetage. Détection IA temps réel, reconstruction 3D GPU, intégration cloud DJI et conception d'un drone custom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 150 H360 L420 95 H860 L920 150 H1440"/>
+    <path class="pcb-trace" d="M0 710 H300 L380 650 H740 L820 710 H1440"/>
+    <path class="pcb-trace" d="M200 0 V240 L280 320 V580"/>
+    <path class="pcb-trace" d="M1240 0 V200 L1160 280 V540"/>
+    <circle class="pcb-pad" cx="420" cy="95" r="6"/><circle class="pcb-pad" cx="920" cy="150" r="6"/>
+    <circle class="pcb-pad" cx="380" cy="650" r="6"/><circle class="pcb-pad" cx="280" cy="320" r="6"/>
+    <circle class="pcb-via" cx="860" cy="95" r="4"/><circle class="pcb-via" cx="740" cy="650" r="4"/>
+  </svg>
+
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">// Profil</a></li>
+      <li><a href="but1.html">// BUT1</a></li>
+      <li><a href="but2.html">// BUT2</a></li>
+      <li><a href="but3-ese.html" class="active">// BUT3</a></li>
+      <li><a href="projets.html">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head wrap">
+    <div class="breadcrumb reveal"><a href="index.html">~/accueil</a><span class="sep">/</span><a href="but3-ese.html">but3-ese</a><span class="sep">/</span>stage-capsec</div>
+    <div class="section-tag reveal">Stage R&D · 16 mars — 19 juin 2026 · CapSec (UTT)</div>
+    <h1 class="reveal d1">Stage — <span class="accent">Projet ARODE</span></h1>
+    <p class="lead reveal d2">Stage de <strong style="color:var(--txt)">3 mois</strong> au sein de <strong style="color:var(--txt)">CapSec</strong>, plateforme de recherche de l'UTT rattachée au laboratoire LIST3N. Mission : faire passer le projet <span class="em">ARODE</span> — un système de drone autonome de recherche et sauvetage — <strong style="color:var(--txt)">du prototype expérimental au système opérationnel déployable</strong>.</p>
+  </header>
+
+  <section class="wrap" style="padding-top:10px">
+    <div class="telemetry">
+      <div class="stat reveal"><div class="num"><span data-count="3" data-suffix=" mois">0</span></div><div class="label">Durée du stage</div></div>
+      <div class="stat reveal d1"><div class="num"><span data-count="4" data-suffix=" axes">0</span></div><div class="label">Grandes contributions</div></div>
+      <div class="stat reveal d2"><div class="num"><span data-count="2" data-suffix="× RTX">0</span></div><div class="label">Serveur GPU bi-RTX 5070</div></div>
+      <div class="stat reveal d3"><div class="num">SAM 3D</div><div class="label">Module intégré de bout en bout</div></div>
+    </div>
+  </section>
+
+  <!-- Correction note (discrète) -->
+  <section class="wrap" style="padding-top:0">
+    <div class="callout reveal" >
+      <span class="icon">⏱</span>
+      <div><h4>Une expérience de 3 mois</h4>
+      <p>Réalisé du <strong>16 mars au 19 juin 2026</strong>, ce stage R&D s'est étendu sur <strong>3 mois pleins</strong> — soit bien plus que la durée minimale, dans la continuité directe d'un premier stage effectué à CapSec en 2025.</p></div>
+    </div>
+  </section>
+
+  <!-- Contexte entreprise -->
+  <section class="wrap">
+    <div class="section-tag reveal">01 — L'entreprise</div>
+    <h2 class="section-title reveal">CapSec · plateforme de recherche</h2>
+    <div class="grid grid-2 reveal" style="margin-top:24px; align-items:start">
+      <div class="prose">
+        <p><strong>CapSec</strong> est une startup issue de l'Université de Technologie de Troyes (UTT), à l'avant-garde des technologies de <strong>réseaux de capteurs sans fil</strong>, avec une expertise pointue sur les <span class="em">drones intelligents</span> et les applications de sécurité. Hébergée dans les locaux de l'UTT, elle bénéficie d'une synergie forte avec le laboratoire <strong>LIST3N</strong>.</p>
+        <p>La plateforme s'étend sur 300 m² dédiés à la conception, au test et à la validation de solutions embarquées, avec une plateforme extérieure pour les essais de drones en conditions réelles.</p>
+      </div>
+      <div class="card"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">// projet_ARODE</h3>
+        <p style="margin-bottom:12px">Drone autonome de recherche et sauvetage. <strong style="color:var(--txt)">Objectif final : sauver des vies</strong> en détectant automatiquement des victimes et en reconstruisant en 3D le site d'intervention pour les équipes de secours.</p>
+        <p><span class="chip">Mavic 3 Enterprise</span> <span class="chip">DJI Cloud API</span> <span class="chip">Détection IA</span> <span class="chip">Reconstruction 3D</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problématique -->
+  <section class="wrap">
+    <div class="section-tag reveal">02 — Problématique 2026</div>
+    <h2 class="section-title reveal">Du prototype au système opérationnel</h2>
+    <div class="prose reveal" style="margin-top:8px; max-width:80ch">
+      <p>« <em class="em">Comment transformer le prototype d'acquisition vidéo ARODE en un système opérationnel complet, capable de détecter automatiquement des victimes en temps réel, de reconstruire en 3D le site d'intervention, et d'offrir aux équipes de secours une interface unifiée fiable utilisable en conditions terrain ?</em> »</p>
+      <p>Cela impose de basculer de l'architecture monoposte de 2025 vers une <strong>architecture distribuée</strong> : un backend Python sur serveur GPU pour le traitement IA et la 3D, un frontend web multi-clients comme interface opérateur, et un pilotage à distance du drone via la <strong>DJI Cloud API</strong>. De nouveaux défis en découlent : cycle de vie GPU, synchronisation par MQTT, conteneurisation Docker, reconstruction 3D massivement parallélisée.</p>
+    </div>
+  </section>
+
+  <!-- Missions -->
+  <section class="wrap">
+    <div class="section-tag reveal">03 — Travail réalisé</div>
+    <h2 class="section-title reveal">Mes 4 grandes contributions</h2>
+    <div class="grid grid-2" style="margin-top:26px; align-items:start">
+
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">01 · Interface opérateur live</h3>
+        <p style="margin-bottom:10px">Conception d'un <strong style="color:var(--txt)">mode live plein écran</strong> rassemblant en une vue la cartographie, le flux vidéo direct du drone et le panneau victimes/suspects mis à jour en temps réel — inspiré de l'ergonomie de DJI Pilot 2.</p>
+        <p>Repositionnement des overlays de télémétrie (lat/lon/altitude/batterie/GPS), marquage rapide des faux positifs par l'opérateur, et nettoyage du frontend pour réduire la charge cognitive en démonstration client.</p>
+      </div>
+
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">02 · Debug du pipeline de détection IA</h3>
+        <p style="margin-bottom:10px">Diagnostic et correction de régressions sur le pipeline : capture RTSP/MJPEG → filtrage télémétrie → détecteur <strong style="color:var(--txt)">DEIM v4</strong> → validation <strong style="color:var(--txt)">Qwen3-VL</strong> (fine-tuné LoRA) → publication MQTT.</p>
+        <p>Identification de la cause racine d'un blocage : le composant <code class="chip" style="font-size:.74rem">TelemetryGate</code> rejetait toutes les frames lorsque <code class="chip" style="font-size:.74rem">altitude_max</code> restait <code class="chip" style="font-size:.74rem">undefined</code>. Diagnostic de freezes vidéo et de crashs Python en charge, via SSH.</p>
+      </div>
+
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">03 · Intégration SAM 3D Body &amp; déploiement</h3>
+        <p style="margin-bottom:10px">Intégration <strong style="color:var(--txt)">de bout en bout</strong> du module <strong style="color:var(--txt)">SAM 3D Body ViT-H</strong> (Meta) : microservice GPU dédié, chargement/déchargement à la demande de la VRAM, contrat d'API détecteur↔SAM, et viewer 3D côté frontend (mesh SMPL de 18 439 sommets).</p>
+        <p>Déploiement de la stack Docker Compose multi-services sur le serveur bi-GPU <strong>RTX 5070</strong> du partenaire : drivers CUDA, runtime NVIDIA conteneurs, broker <strong>Mosquitto</strong> et adressage MQTT.</p>
+      </div>
+
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">04 · Conception d'un drone custom</h3>
+        <p style="margin-bottom:10px">En binôme, conception d'un drone <strong style="color:var(--txt)">sur-mesure</strong> destiné aux manœuvres autonomes de rapprochement victime — là où l'écosystème fermé DJI bloque (impossible de commander programmatiquement le déplacement du Mavic 3E).</p>
+        <p>Choix des composants (SIYI MK32 / A8 mini / R1M, BEC SIYI, Holybro PM02, ReSpeaker 4-Mic), gestion fournisseurs (BOM consolidée), et conception de l'<strong style="color:var(--txt)">architecture réseau double-flux</strong> : duplication non native du flux vidéo vers la radiocommande <em>et</em> une Jetson Orin Nano embarquée pour la détection IA en vol.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drone custom detail -->
+  <section class="wrap">
+    <div class="section-tag reveal">04 — Volet hardware</div>
+    <h2 class="section-title reveal">Le drone custom en détail</h2>
+    <ul class="spec-list reveal" style="margin-top:24px">
+      <li><span class="k">Liaison radio/vidéo</span><span class="v">Ensemble <strong>SIYI MK32</strong> (radiocommande), <strong>SIYI A8 mini</strong> (caméra gimballisée), <strong>SIYI R1M</strong> (récepteur) — qualité de liaison vidéo et compatibilité large.</span></li>
+      <li><span class="k">Alimentation</span><span class="v">BEC SIYI 4S-18S, power module <strong>Holybro PM02</strong> (mesure tension/courant), connecteurs XT60.</span></li>
+      <li><span class="k">Capture audio</span><span class="v"><strong>ReSpeaker USB 4-Mic Array (XVF3000)</strong> — captation directionnelle robuste au vent, pour interpeller une victime au sol.</span></li>
+      <li><span class="k">Calculateur embarqué</span><span class="v"><strong>NVIDIA Jetson Orin Nano</strong> (JetPack + FFmpeg) pour exécuter le détecteur localement en vol → latence réduite.</span></li>
+      <li><span class="k">Architecture réseau</span><span class="v">Duplication du flux (A8 mini + R1M) via switch Ethernet embarqué vers la Jetson <em>et</em> la liaison radio — point le plus risqué, sécurisé et validé avant réception du châssis.</span></li>
+      <li><span class="k">Éclairage</span><span class="v">Deux projecteurs Lumenier (pill LED) validés par commande PWM via ESP32 pour les missions en faible luminosité.</span></li>
+    </ul>
+  </section>
+
+  <!-- Timeline -->
+  <section class="wrap">
+    <div class="section-tag reveal">05 — Déroulé</div>
+    <h2 class="section-title reveal">Chronologie du stage</h2>
+    <div class="timeline reveal" style="margin-top:28px">
+      <div class="tl-item"><span class="when">16 MARS 2026 · S1</span><h4>Prise en main</h4><p>Montée en charge sur la base existante (backend FastAPI, frontend Next.js), compréhension de l'architecture des services et mise en place de l'environnement de dev multi-postes (laptop perso, machine CapSec-GTX, serveur partenaire).</p></div>
+      <div class="tl-item"><span class="when">PHASE CENTRALE</span><h4>Frontend, KMZ &amp; debug IA</h4><p>Mode live plein écran, génération des missions KMZ depuis l'interface (altitude, vitesse, angle caméra pré-câblés pour déclencher la détection), et fiabilisation du pipeline de détection.</p></div>
+      <div class="tl-item"><span class="when">INTÉGRATION</span><h4>SAM 3D &amp; déploiement GPU</h4><p>Microservice SAM 3D Body intégré de bout en bout, déploiement de la stack conteneurisée sur le serveur bi-GPU, configuration MQTT et tests de charge des modèles cohabitants.</p></div>
+      <div class="tl-item"><span class="when">DERNIER MOIS · → 19 JUIN</span><h4>Tests terrain &amp; assemblage drone</h4><p>Vols de test sur la plateforme extérieure CapSec, reproduction de bugs en conditions réelles, remontée structurée. Châssis du drone custom assemblé (livré le 10 juin), Jetson configurée ; moteurs T-Motor reçus le 19 juin (dernier jour).</p></div>
+    </div>
+  </section>
+
+  <!-- Architecture distribuée -->
+  <section class="wrap">
+    <div class="section-tag reveal">06 — Architecture</div>
+    <h2 class="section-title reveal">Le système ARODE de 2ᵉ génération</h2>
+    <p class="lead reveal">Le passage du prototype monoposte (2025) à une architecture distribuée multi-clients, synchronisée par MQTT.</p>
+    <div class="flow reveal">
+      <div class="node"><span class="nt">Acquisition</span><span class="nv">Mavic 3 Enterprise</span><span class="ns">Flux RTSP/MJPEG · DJI Cloud API</span></div>
+      <span class="sep">▸</span>
+      <div class="node accent"><span class="nt">Backend GPU</span><span class="nv">FastAPI · Docker</span><span class="ns">DEIM v4 · Qwen3-VL · SAM 3D · ODM</span></div>
+      <span class="sep">◀▶</span>
+      <div class="node"><span class="nt">Bus</span><span class="nv">MQTT · Mosquitto</span><span class="ns">Synchronisation des services</span></div>
+      <span class="sep">▸</span>
+      <div class="node"><span class="nt">Opérateur</span><span class="nv">Frontend Next.js</span><span class="ns">Live · carto · victimes · 3D</span></div>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">🎯 Détection IA</h3><p>Détecteur d'objets <strong>DEIM v4</strong> validé par le modèle Vision-Language <strong>Qwen3-VL</strong> fine-tuné (LoRA) sur dataset drone.</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">🧍 Reconstruction 3D</h3><p><strong>SAM 3D Body ViT-H</strong> (Meta) — mesh SMPL de la pose de la victime ; reconstruction photogrammétrique du site via <strong>ODM</strong> sur GPU.</p></div>
+      <div class="card reveal d2"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">⚙ Industrialisation</h3><p>Conteneurisation <strong>Docker Compose</strong>, CI GitHub Actions, gestion fine du cycle de vie GPU et auto-reconnexion.</p></div>
+    </div>
+  </section>
+
+  <!-- Galerie réelle -->
+  <section class="wrap">
+    <div class="section-tag reveal">07 — En images</div>
+    <h2 class="section-title reveal">Le système en fonctionnement</h2>
+
+    <h3 class="reveal" style="font-family:var(--mono); color:var(--accent); margin:22px 0 6px; font-size:1.05rem">▸ Logiciel — interface ARODE &amp; détection IA</h3>
+    <p class="lead reveal" style="font-size:.95rem">Captures réelles de l'interface opérateur et des modèles de détection.</p>
+    <div class="gallery reveal" style="margin-top:18px; grid-template-columns:repeat(3,1fr)">
+      <figure><img data-lightbox src="medias/onglet_live.png" alt="Interface opérateur ARODE en mode Live plein écran"><figcaption>// onglet_live — flux drone + carte + panneau victimes</figcaption></figure>
+      <figure><img data-lightbox src="medias/detection_victime.png" alt="Détection d'une victime au sol par l'IA"><figcaption>// detection_victime — HD Viewer, bounding box (Mavic 3E)</figcaption></figure>
+      <figure><img data-lightbox src="medias/sam3d_victime.png" alt="Reconstruction 3D de la pose par SAM 3D Body"><figcaption>// sam3d_victime — mesh SMPL, 18 439 sommets</figcaption></figure>
+    </div>
+
+    <h3 class="reveal" style="font-family:var(--mono); color:var(--accent); margin:40px 0 6px; font-size:1.05rem">▸ Hardware — conception du drone custom</h3>
+    <p class="lead reveal" style="font-size:.95rem">Assemblage et bancs de test des composants du drone sur-mesure (SIYI, Jetson, T-Motor).</p>
+    <div class="gallery reveal" style="margin-top:18px; grid-template-columns:repeat(3,1fr)">
+      <figure><img data-lightbox src="medias/IMG_5634.jpeg" alt="Assemblage du drone custom"><figcaption>// drone_custom — assemblage châssis &amp; contrôleur de vol</figcaption></figure>
+      <figure><img data-lightbox src="medias/IMG_5635.jpeg" alt="Radiocommande SIYI MK32 en test"><figcaption>// radio_SIYI_MK32 — test liaison vidéo (oscillo + multimètre)</figcaption></figure>
+      <figure><img data-lightbox src="medias/IMG_5636.jpeg" alt="Banc de test des composants"><figcaption>// banc_test — alim labo, breadboard, validation composants</figcaption></figure>
+    </div>
+    <p class="lead reveal" style="margin-top:18px; font-size:.92rem; color:var(--txt-faint)">// Schémas d'architecture complets (Mermaid, draw.io) disponibles dans le rapport de stage ci-dessous.</p>
+  </section>
+
+  <!-- Bilan -->
+  <section class="wrap">
+    <div class="section-tag reveal">08 — Bilan</div>
+    <h2 class="section-title reveal">Résultats &amp; apprentissages</h2>
+    <div class="grid grid-2 reveal" style="margin-top:24px; align-items:start">
+      <div class="prose">
+        <p>Au terme du stage, le système ARODE a été <strong>fiabilisé et déployé</strong> sur le serveur du partenaire : bugs identifiés en démonstration corrigés, ergonomie du frontend finalisée, et stack Docker déployée de façon reproductible sur le serveur bi-GPU.</p>
+        <p>J'ai élargi mon périmètre à des domaines que je ne maîtrisais pas en arrivant : <span class="em">IA appliquée</span> (intégration d'un module de reconstruction 3D du corps humain), industrialisation logicielle (Docker, MQTT, CI), et raisonnement en <strong>environnements reproductibles</strong>.</p>
+      </div>
+      <div class="card"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3 style="color:var(--accent)">// livrables</h3>
+        <ul class="spec-list" style="border:0; background:transparent; gap:0">
+          <li style="grid-template-columns:1fr; padding:9px 0; background:transparent"><span class="v">▸ Module SAM 3D Body intégré de bout en bout (nouvelle fonctionnalité)</span></li>
+          <li style="grid-template-columns:1fr; padding:9px 0; background:transparent"><span class="v">▸ Stack Docker multi-services déployée sur serveur bi-GPU</span></li>
+          <li style="grid-template-columns:1fr; padding:9px 0; background:transparent"><span class="v">▸ Architecture réseau double-flux du drone custom validée</span></li>
+          <li style="grid-template-columns:1fr; padding:9px 0; background:transparent"><span class="v">▸ Documentation technique versionnée (Mermaid, draw.io, Markdown)</span></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:34px; display:flex; gap:14px; flex-wrap:wrap" class="reveal">
+      <a href="medias/Rapport_Stage_CAPSEC_2026.pdf" class="btn btn-primary" target="_blank" rel="noopener">⤓ Lire le rapport de stage</a>
+      <a href="but3-ese.html" class="btn btn-ghost">← Retour à la collection</a>
+    </div>
+  </section>
+
+  <div class="lightbox"><button class="close" aria-label="Fermer">✕</button><img src="" alt="Aperçu"></div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="projet-kart.html">← Kart</a>
+        <a href="but3-ese.html">BUT3 ESE</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Première Année · Amine Atamna</title>
+  <meta name="description" content="Première année de BUT GEII : les fondamentaux de l'électronique et de l'automatisme — multimètre, régulation de température, robot suiveur de ligne, automatisme & énergie, shield Arduino.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 150 H360 L420 95 H860 L920 150 H1440"/>
+    <path class="pcb-trace" d="M0 710 H300 L380 650 H740 L820 710 H1440"/>
+    <path class="pcb-trace" d="M200 0 V260 L280 340 V600"/>
+    <circle class="pcb-pad" cx="420" cy="95" r="6"/><circle class="pcb-pad" cx="920" cy="150" r="6"/>
+    <circle class="pcb-pad" cx="380" cy="650" r="6"/>
+    <circle class="pcb-via" cx="860" cy="95" r="4"/>
+  </svg>
+
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">// Profil</a></li>
+      <li><a href="but1.html" class="active">// BUT1</a></li>
+      <li><a href="but2.html">// BUT2</a></li>
+      <li><a href="but3-ese.html">// BUT3</a></li>
+      <li><a href="projets.html">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head wrap">
+    <div class="breadcrumb reveal"><a href="index.html">~/accueil</a><span class="sep">/</span>collection<span class="sep">/</span>but1</div>
+    <div class="section-tag reveal">Collection · Première Année</div>
+    <h1 class="reveal d1">Première <span class="accent">Année</span></h1>
+    <p class="lead reveal d2">Les <strong style="color:var(--txt)">fondamentaux</strong> du Génie Électrique : analyse fonctionnelle, conception de circuits imprimés, soudure, programmation Arduino, automatisme et énergie. Cinq SAÉ qui posent les bases du métier d'électronicien.</p>
+  </header>
+
+  <!-- Sommaire -->
+  <section class="wrap" style="padding-top:10px">
+    <div class="grid grid-3 reveal">
+      <a class="card" href="#multimetre" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">XS101 · Multimètre</h3><p>Mesure courant / tension / résistance</p></a>
+      <a class="card" href="#regulation" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">XS102 · Régulation thermique</h3><p>Chauffe d'un bloc aluminium en tout-ou-rien</p></a>
+      <a class="card" href="#robot" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">XS201 · Robot suiveur</h3><p>4 cartes KiCad, caméra Pixy</p></a>
+      <a class="card" href="#automatisme" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">XS202 · Automatisme &amp; Énergie</h3><p>Armoire électrique + station à four</p></a>
+      <a class="card" href="#shield" style="text-decoration:none; color:inherit"><span class="hud-corner tl"></span><span class="hud-corner br"></span><h3 style="font-size:1rem">SAÉ 1.0 · Shield Arduino</h3><p>Carte d'extension &amp; capteurs</p></a>
+    </div>
+  </section>
+
+  <!-- XS101 Multimètre -->
+  <section class="wrap" id="multimetre">
+    <div class="sae-head reveal"><span class="saeid">XS101 · SAÉ 1.01</span><span class="dur">⏱ 3 jours</span></div>
+    <h2 class="section-title reveal">Multimètre</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Concevoir un <strong>multimètre fonctionnel</strong> capable de mesurer courants, résistances et tensions. Le projet a démarré par une partie théorique (tables de vérité, tableaux de Karnaugh, pont diviseur de tension, calculs de résistance), suivie du <strong>routage du circuit imprimé sur Tinkercad</strong>.</p>
+      <p>Vint ensuite la pratique : <strong>soudure des composants</strong> puis tests de fonctionnement. Enfin, un programme Arduino répondant au cahier des charges — calibres automatiques pour chaque échelle, LED indiquant le mode (Ampèremètre / Voltmètre / Ohmmètre) et affichage des mesures sur l'<span class="em">afficheur 4 digits 7 segments</span>.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/Recto Multimètre.png" alt="Recto du multimètre"><figcaption>// recto — circuit imprimé</figcaption></figure>
+      <figure><img data-lightbox src="medias/Verso Multimètre.png" alt="Verso du multimètre"><figcaption>// verso — soudure composants</figcaption></figure>
+      <figure><img data-lightbox src="medias/Afficheur 7 segments 4 digits.png" alt="Afficheur 7 segments 4 digits"><figcaption>// afficheur 7 segments 4 digits</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC11.01</span> Analyse fonctionnelle (multiplexage, calibrage) &nbsp; <span class="chip">Concevoir · AC11.02</span> Réalisation du prototype</p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- XS102 Régulation -->
+  <section class="wrap" id="regulation">
+    <div class="sae-head reveal"><span class="saeid">XS102 · SAÉ 1.02</span><span class="dur">⏱ 2 semaines</span></div>
+    <h2 class="section-title reveal">Régulation de température</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Concevoir un système de <strong>régulation de température</strong> chauffant un bloc d'aluminium et maintenant sa température entre deux seuils. Après une phase théorique et des simulations Tinkercad, place à la soudure et aux tests sur banc d'essai.</p>
+      <p>Le régulateur final fonctionne en <strong>tout-ou-rien</strong> : chauffage activé sous <strong>62 °C</strong>, désactivé au-dessus de <strong>72 °C</strong>. Une LED clignote pendant la chauffe (<span class="em">2 Hz, rapport cyclique 0,7</span>) et trois LEDs indiquent à l'utilisateur si le bloc est trop froid, dans la plage souhaitée ou trop chaud.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/1.png" alt="Régulation de température - étape 1"><figcaption>// carte_01</figcaption></figure>
+      <figure><img data-lightbox src="medias/2.png" alt="Régulation de température - étape 2"><figcaption>// carte_02</figcaption></figure>
+      <figure><img data-lightbox src="medias/3.png" alt="Régulation de température - étape 3"><figcaption>// carte_03</figcaption></figure>
+      <figure><img data-lightbox src="medias/4.png.1.png" alt="Régulation de température - étape 4"><figcaption>// carte_04</figcaption></figure>
+      <figure><img data-lightbox src="medias/Capture d'écran 2024-06-25 173317.png" alt="Schéma de régulation"><figcaption>// schéma / compte-rendu</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC11.01 / AC11.02</span> &nbsp; <span class="chip">Vérifier · AC12.01</span> Procédure d'essais (tests de cartes &amp; continuité des soudures)</p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- XS201 Robot -->
+  <section class="wrap" id="robot">
+    <div class="sae-head reveal"><span class="saeid">XS201 · SAÉ 2.01</span><span class="dur">⏱ 3 semaines · trinôme</span></div>
+    <h2 class="section-title reveal">Robot Suiveur de Ligne</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Concevoir un <strong>robot suiveur de ligne</strong> capable de suivre une ligne noire sur fond blanc, de gérer les intersections et de détecter/suivre les murs. En trinôme, répartition par capteur : photo-réflectifs, capteurs de distance, et — pour ma part — la <strong>caméra Pixy</strong>.</p>
+      <p>Après un prototypage sur plaques à pastilles, nous avons routé sous <strong>KiCad</strong> quatre circuits imprimés : une <strong>carte Shield</strong> (capteurs + Arduino Nano), une carte pour les 5 capteurs photo-réflectifs centraux, et deux cartes latérales pour détecter les marques de virage. La réussite a reposé sur la <span class="em">communication d'équipe</span> et la mise en commun des trois capteurs.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/robot1.png" alt="Robot suiveur de ligne"><figcaption>// robot — vue 1</figcaption></figure>
+      <figure><img data-lightbox src="medias/robot2.png" alt="Robot suiveur de ligne"><figcaption>// robot — vue 2</figcaption></figure>
+      <figure><img data-lightbox src="medias/routage_kicad.png" alt="Routage KiCad du robot"><figcaption>// routage_kicad — circuits</figcaption></figure>
+      <figure><img data-lightbox src="medias/routage_impression.png" alt="Impression des cartes du robot"><figcaption>// routage_impression — vue PCB</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC11.01 / AC11.02</span> Graphes d'état, prototypage &nbsp; <span class="chip">Vérifier · AC12.01 / AC12.02</span> Tests sur piste &amp; débogage</p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- XS202 Automatisme -->
+  <section class="wrap" id="automatisme">
+    <div class="sae-head reveal"><span class="saeid">XS202 · SAÉ 2.02</span><span class="dur">⏱ 2 semaines · binôme</span></div>
+    <h2 class="section-title reveal">Automatisme + Énergie</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Deux SAÉ d'une semaine chacune. Côté <strong>énergie</strong> : câblage d'une <strong>armoire électrique</strong>, tests de continuité, consignations et VAT, raccordement à une partie opérative simulant un tri de pièces (vérins pneumatiques, capteurs, plateau tournant), avec port des <span class="em">EPI</span> pour les tests sous tension.</p>
+      <p>Côté <strong>automatisme</strong> : pilotage d'une <strong>station de traitements multiples avec four</strong> (tirée au sort). Familiarisation avec les composants (capteurs photo-réceptifs, fins de course, moteurs bidirectionnels, vérins), puis programmation en <strong>GRAFCET</strong> pour cuire, scier et transférer des pièces cylindriques entre four, plateau rotatif et bande transporteuse.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/armoirrrrrrrrrrrrre (1).jpg" alt="Armoire électrique"><figcaption>// armoire_électrique — câblage</figcaption></figure>
+      <figure><img data-lightbox src="medias/partieoperative.jpg" alt="Partie opérative"><figcaption>// partie_opérative</figcaption></figure>
+      <figure><img data-lightbox src="medias/maquette_auto.png" alt="Maquette automatisme"><figcaption>// maquette — station à four</figcaption></figure>
+      <figure><img data-lightbox src="medias/Capture d'écran 2024-06-25 151853.png" alt="GRAFCET"><figcaption>// grafcet</figcaption></figure>
+    </div>
+    <figure class="media-video reveal" style="margin-top:14px; max-width:520px">
+      <video controls preload="metadata" src="medias/VID_20240618_121615.mp4"></video>
+      <figcaption>// démonstration — 30 s</figcaption>
+    </figure>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC11.01</span> GRAFCETs communicants, analyse puissance &nbsp; <span class="chip">Vérifier · AC12.01 / AC12.02</span> Continuité / VAT / consignation</p>
+  </section>
+  <div class="sae-divider wrap"></div>
+
+  <!-- SAÉ1.0 Shield -->
+  <section class="wrap" id="shield">
+    <div class="sae-head reveal"><span class="saeid">SAÉ 1.0</span><span class="dur">⏱ Série de TP</span></div>
+    <h2 class="section-title reveal">Shield Arduino</h2>
+    <div class="prose reveal" style="max-width:80ch">
+      <p>Conception d'un <strong>Shield Arduino</strong> et apprentissage de la <strong>soudure propre à l'étain</strong>. Associé à un <strong>Arduino Nano</strong>, le shield a permis de tester LEDs, potentiomètres, boutons poussoirs et capteur CTN.</p>
+      <p>Une série de TP a suivi : animations de LEDs pilotées par boutons (couleurs) et potentiomètres (vitesse d'un chenillard), maîtrise de l'<strong>afficheur 7 segments 4 digits</strong>, et pour finir l'utilisation du <strong>capteur à ultrasons HC-SR04</strong> affichant une distance d'obstacle sur le moniteur série.</p>
+    </div>
+    <div class="gallery reveal" style="margin-top:22px">
+      <figure><img data-lightbox src="medias/Recto Shield Arduino.png" alt="Recto Shield Arduino"><figcaption>// recto_shield</figcaption></figure>
+      <figure><img data-lightbox src="medias/Verso Shield Arduino.png" alt="Verso Shield Arduino"><figcaption>// verso_shield</figcaption></figure>
+      <figure><img data-lightbox src="medias/Arduino Nano.png" alt="Arduino Nano"><figcaption>// arduino_nano</figcaption></figure>
+      <figure><img data-lightbox src="medias/Capteur à ultrason HC-SR04.png" alt="Capteur HC-SR04"><figcaption>// capteur_HC-SR04</figcaption></figure>
+      <figure><img data-lightbox src="medias/Afficheur 7 segments 4 digits.png" alt="Afficheur 7 segments"><figcaption>// afficheur_7seg</figcaption></figure>
+      <figure><img data-lightbox src="medias/Screenshot 2024-01-09 at 08-33-34 Dossier Saé Montage - Dossier_Saé_Montage.pdf.png" alt="Schéma de la carte"><figcaption>// schéma_carte</figcaption></figure>
+    </div>
+    <p class="reveal" style="margin-top:18px"><span class="chip">Concevoir · AC11.02</span> Soudure des composants &amp; programmes Arduino en TP</p>
+    <div style="margin-top:34px; display:flex; gap:14px; flex-wrap:wrap" class="reveal">
+      <a href="but2.html" class="btn btn-primary">▸ Voir la 2ᵉ année</a>
+      <a href="projets.html" class="btn btn-ghost">← Tous les projets</a>
+    </div>
+  </section>
+
+  <div class="lightbox"><button class="close" aria-label="Fermer">✕</button><img src="" alt="Aperçu"></div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="but2.html">2ᵉ année →</a>
+        <a href="but3-ese.html">3ᵉ année →</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projets · Amine Atamna</title>
+  <meta name="description" content="Tous les projets et SAÉ d'Amine Atamna sur les trois années de BUT GEII : du multimètre à la conception de drone autonome.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="scroll-prog"></div>
+  <div class="pcb-bg"></div>
+  <svg class="pcb-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
+    <path class="pcb-trace" d="M0 140 H340 L400 90 H840 L900 140 H1440"/>
+    <path class="pcb-trace" d="M0 700 H280 L360 640 H720 L800 700 H1440"/>
+    <path class="pcb-trace" d="M180 0 V240 L260 320 V580"/>
+    <circle class="pcb-pad" cx="400" cy="90" r="6"/><circle class="pcb-pad" cx="900" cy="140" r="6"/>
+    <circle class="pcb-pad" cx="360" cy="640" r="6"/>
+    <circle class="pcb-via" cx="840" cy="90" r="4"/>
+  </svg>
+
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="dot"></span>ATAMNA<b>.</b>sys</a>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <ul class="nav-links">
+      <li><a href="index.html">// Profil</a></li>
+      <li><a href="but1.html">// BUT1</a></li>
+      <li><a href="but2.html">// BUT2</a></li>
+      <li><a href="but3-ese.html">// BUT3</a></li>
+      <li><a href="projets.html" class="active">// Projets</a></li>
+      <li><a href="contact.html">// Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head wrap">
+    <div class="breadcrumb reveal"><a href="index.html">~/accueil</a><span class="sep">/</span>projets</div>
+    <div class="section-tag reveal">Index · 3 années de BUT GEII</div>
+    <h1 class="reveal d1">Tous les <span class="accent">projets</span></h1>
+    <p class="lead reveal d2">Du premier multimètre câblé à la conception d'un drone autonome de sauvetage : la progression complète de mon parcours en Génie Électrique et Informatique Industrielle.</p>
+  </header>
+
+  <!-- 3e année -->
+  <section class="wrap" style="padding-top:10px">
+    <div class="section-tag reveal">Troisième Année — ESE · 2025-26</div>
+    <h2 class="section-title reveal">Spécialité Électronique &amp; Systèmes Embarqués</h2>
+    <div class="grid grid-2" style="margin-top:24px">
+      <a href="projet-kart.html" class="card proj-card reveal">
+        <div class="proj-thumb"><div class="scanline"></div><span class="proj-badge">SAÉ · S6</span>
+          <img src="medias/IMG_4202 (1).jpeg" alt="Kart électrique"></div>
+        <div class="proj-body"><h3>Kart Électrique</h3><p>Contrôleur ATmega328P, PWM 10 kHz, conditionnement vers SEVCON, failsafes. <span class="arrow">→</span></p></div>
+      </a>
+      <a href="projet-stage.html" class="card proj-card reveal d1">
+        <div class="proj-thumb diagram"><span class="proj-badge">STAGE · 3 MOIS</span>
+          <span class="glyph"><span class="ico">🚁</span>ARODE · R&D</span></div>
+        <div class="proj-body"><h3>Stage R&D — CapSec · ARODE</h3><p>Drone autonome de recherche &amp; sauvetage : IA temps réel, 3D GPU, drone custom. <span class="arrow">→</span></p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2e année -->
+  <section class="wrap">
+    <div class="section-tag reveal">Deuxième Année — ESE</div>
+    <h2 class="section-title reveal">Immersion systèmes embarqués</h2>
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>SAÉ 3.1 · Voiture Autonome</h3><p>Interface Qt/C++ (POO), communication client-serveur TCP, intégration LiDAR 360. 2ᵉ place au concours robotique de Cachan.</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>SAÉ 3.2 · Banc de Test Haut-Parleur</h3><p>Conception d'un banc de mesure et de caractérisation acoustique d'un haut-parleur.</p></div>
+      <div class="card reveal d2"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>SAÉ 4.1 · Moteur Brushless FPGA</h3><p>Commande d'un moteur brushless pilotée sur cible FPGA — logique numérique embarquée.</p></div>
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>SAÉ 4.2 · Escape Bot</h3><p>Robotique mobile et logique de résolution — projet ludique et pédagogique.</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>Stage 2025 · CapSec</h3><p>Premier stage sur ARODE : chaîne de communication et transmission vidéo du drone (RTMP/RTSP, SDK DJI).</p></div>
+    </div>
+  </section>
+
+  <!-- 1re année -->
+  <section class="wrap">
+    <div class="section-tag reveal">Première Année</div>
+    <h2 class="section-title reveal">Les fondamentaux</h2>
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>XS101 · Multimètre</h3><p>Conception et réalisation d'un multimètre — mesure électrique et instrumentation.</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>XS102 · Régulation de température</h3><p>Asservissement et régulation thermique d'un système.</p></div>
+      <div class="card reveal d2"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>XS201 · Robot Suiveur de Ligne</h3><p>Robotique mobile : capteurs, asservissement et logique de suivi.</p></div>
+      <div class="card reveal"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>XS202 · Automatisme + Énergie</h3><p>Station de traitements multiples avec four — automatisme industriel.</p></div>
+      <div class="card reveal d1"><span class="hud-corner tl"></span><span class="hud-corner br"></span>
+        <h3>SAÉ 1.0 · Shield Arduino</h3><p>Conception d'un shield Arduino — premiers pas en électronique embarquée.</p></div>
+    </div>
+    <div style="margin-top:34px" class="reveal">
+      <a href="but3-ese.html" class="btn btn-primary">▸ Plonger dans la 3ᵉ année ESE</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="meta">© 2026 AMINE ATAMNA · BUT3 GEII ESE — IUT de Troyes</div>
+      <div style="display:flex; gap:20px">
+        <a href="https://www.linkedin.com/in/amineatamna/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="contact.html">Contact →</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,13 +1,18 @@
-# Export Mahara brut (non utilisé par le site reconstruit)
-HTML/
+# ── Dossiers locaux de travail (non déployés sur le site GitHub Pages) ──
 
-# Documents sources à la racine (non référencés par le site ; le rapport est dans medias/)
-/programme_national_geii.pdf
-/RAPPORT_STAGE_CAPSEC_2026 (1).pdf
-/SAE S6 GEII*.pdf
-/sae_kart.md
+# PowerPoint + PDF des soutenances (portfolio & stage)
+/soutenances/
 
-# Système / éditeurs
+# Documents sources : consignes, rapport, programme national, anciennes présentations
+/documents/
+
+# Export Mahara brut (HTML/) et archives diverses
+/_archives/
+
+# Page autonome d'un camarade (non liée au site)
+/_elias-belmeliani/
+
+# ── Système / éditeurs ──
 .DS_Store
 Thumbs.db
 *~
